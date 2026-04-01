@@ -16,7 +16,7 @@ axes = (
 # 2. Modify your Plot class to make a scatterplot nicely
 import math
 x = [i/100.0 for i in range(0,360)]
-y = [math.sin(x*3.14159/180.0) for xi in x]
+y = [math.sin(xi*3.14159/180.0) for xi in x]
 class Plot: pass
 pl = Plot(axes)
 pl.scatter(x, y)
