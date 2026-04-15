@@ -98,3 +98,24 @@ o = SimpleWindow()
 o_tb = TitlebarWindow(o)
 o_tb_sh = DropShadow(o_tb)
 o_tb_sh.draw()
+
+# =============== ćwiczenia ============
+# uzupełnij kod wg wzorca dekorator:
+
+import glob
+class AbstractImageProcessor: pass
+
+class Resize(AbstractImageProcessor): pass
+class Sharpen(AbstractImageProcessor): pass
+class Saturate(AbstractImageProcessor): pass
+
+class Image: pass
+
+if __name__ == "__main__":
+    img_proc = Resize(Sharpen(Saturate()))
+    for img_fname in glob.glob(".jpg"):
+        my_image = Image(img_fname)     # tu załaduj obrazek
+        # --- uruchom procesor
+        img_proc.process(my_image)
+        # --- na koniec nagraj zmodyfikowany obraz
+        my_image.save("edited_"+img_fname)
